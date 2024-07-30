@@ -5,4 +5,6 @@
 
 using json = nlohmann::json;
 
-WeatherInfo Parse(std::string raw_response);
+class WeatherInfo;
+
+WeatherInfo ParseResponse(std::string raw_response);

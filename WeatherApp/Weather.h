@@ -3,39 +3,28 @@
 #include "Parser.h"
 #include <string>
 
-
-struct WeatherInfo {
-
-		std::string condition = "";
-
-		int temp = NULL;
-
-		int feels_like = NULL;
-
-		int humidity = NULL;
-
-		int uv = NULL;
-
-		int wind_speed = NULL;
-
-		int pressure = NULL;
-
-		WeatherInfo() = default;
-		void operator=(const WeatherInfo& other);
-
-};
-
-class Weather {
+class WeatherInfo {
 private:
+	std::string condition = "";
 
-	Request request;
+	int temp = NULL;
 
-	WeatherInfo weather_info;
+	int feels_like = NULL;
+
+	int humidity = NULL;
+
+	int uv = NULL;
+
+	int wind_speed = NULL;
+
+	int pressure = NULL;
 
 public:
-
-	void GetWeather();
+	WeatherInfo() = default;
+	
+	WeatherInfo(std::string condition, int temp, int feels_like, int humidity, int uv, int wind_speed, int pressure);
+	
+	void operator=(const WeatherInfo& other);
 
 	void PrintWeather();
-
 };

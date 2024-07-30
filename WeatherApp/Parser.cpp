@@ -1,14 +1,12 @@
 #include "Parser.h"
 
-WeatherInfo Parse(std::string raw_response) {
-    WeatherInfo result;
-    json parsed = json::parse(raw_response);
-    result.condition = parsed["condition"]["text"].get<std::string>();
-    result.temp = parsed["current"]["temp_c"];
-    result.feels_like = parsed["current"]["feelslike_c"];
-    result.humidity = parsed["current"]["humidity"];
-    result.uv = parsed["current"]["uv"];
-    result.wind_speed = parsed["current"]["wind_kph"];
-    result.pressure = parsed["current"]["pressure_mb"];
-    return result;
+WeatherInfo ParseResponse(std::string raw_response) {
+	json parsed = json::parse(raw_response);
+	return WeatherInfo(parsed["current"]["condition"]["text"].get<std::string>(),
+					   parsed["current"]["temp_c"],
+					   parsed["current"]["feelslike_c"],
+					   parsed["current"]["humidity"], 
+					   parsed["current"]["uv"],
+					   parsed["current"]["wind_kph"],
+					   parsed["current"]["pressure_mb"]);
 }

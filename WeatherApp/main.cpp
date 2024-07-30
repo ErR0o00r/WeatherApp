@@ -1,11 +1,7 @@
 #include <iostream>
 #include "Request.h"
 #include "Weather.h"
-
-size_t WriteFunction(char* content, size_t size, size_t nmemb, void* userp) {
-	((std::string*)userp)->append(content, size * nmemb);
-	return size * nmemb;
-}
+#include "Parser.h"
 
 int main() {
 	//CURL *handle;
@@ -25,8 +21,12 @@ int main() {
 	//}
 	//std::cout << response << std::endl;
 	//curl_easy_cleanup(handle);
-	Weather weather;
-	weather.GetWeather();
+	
+	Request request;
+	request.SendRequest();
+	std::string raw_response = request.GetResponse();
+	WeatherInfo weather = ParseResponse(raw_response);
 	weather.PrintWeather();
+
 	return 0;
 }
