@@ -1,6 +1,7 @@
 #pragma once
 #include <nlohmann/json.hpp>
 #include "Weather.h"
+#include "UI.h"
 #include <string>
 
 using json = nlohmann::json;

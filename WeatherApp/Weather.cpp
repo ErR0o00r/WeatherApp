@@ -1,6 +1,8 @@
-#include "Weather.h"
+﻿#include "Weather.h"
 
-WeatherInfo::WeatherInfo(std::string condition, int temp, int feels_like, int humidity, int uv, int wind_speed, int pressure) {
+
+WeatherInfo::WeatherInfo(int condition_code, std::string condition, int temp, int feels_like, int humidity, int uv, int wind_speed, int pressure) {
+	this->condition_code = condition_code;
 	this->condition = condition;
 	this->temp = temp;
 	this->feels_like = feels_like;
@@ -11,6 +13,7 @@ WeatherInfo::WeatherInfo(std::string condition, int temp, int feels_like, int hu
 }
 
 void WeatherInfo::operator=(const WeatherInfo& other) {
+	this->condition_code = other.condition_code;
 	this->condition = other.condition;
 	this->temp = other.temp;
 	this->feels_like = other.feels_like;
@@ -20,6 +23,7 @@ void WeatherInfo::operator=(const WeatherInfo& other) {
 	this->pressure = other.pressure;
 }
 
+#ifdef DEBUG
 void WeatherInfo::PrintWeather() {
 	std::cout << "condition: " << this->condition << std::endl;
 	std::cout << "temp: " << this->temp << std::endl;
@@ -29,3 +33,6 @@ void WeatherInfo::PrintWeather() {
 	std::cout << "wind speed: " << this->wind_speed << std::endl;
 	std::cout << "pressure: " << this->pressure << std::endl;
 }
+#endif // DEBUG
+
+
