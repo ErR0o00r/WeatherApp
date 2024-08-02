@@ -8,8 +8,8 @@ WeatherInfo ParseResponse(std::string raw_response) {
 	}
 
 	json parsed = json::parse(raw_response);
-	return WeatherInfo( parsed["current"]["condition"]["code"]
-						parsed["current"]["condition"]["text"].get<std::wstring>(),
+	return WeatherInfo( parsed["current"]["condition"]["code"],
+						parsed["current"]["condition"]["text"].get<std::string>(),
 						parsed["current"]["temp_c"],
 						parsed["current"]["feelslike_c"],
 						parsed["current"]["humidity"], 

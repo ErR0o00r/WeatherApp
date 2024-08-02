@@ -1,6 +1,4 @@
-﻿#include "UI.h"
-
-AsciiArt art;
+#include "UI.h"
 
 void PrintColorText(WORD color, std::string text) {
 	HANDLE std_handle = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -10,7 +8,8 @@ void PrintColorText(WORD color, std::string text) {
 	CloseHandle(std_handle);
 }
 
-std::wstring* ParseConditionCode(int code) {
+std::string* ParseConditionCode(int code) {
+	AsciiArt art
 
 	if (code == 1000) {
 		return art.sunny;
@@ -44,5 +43,3 @@ std::wstring* ParseConditionCode(int code) {
 		return art.wind;
 	}
 }
-
-
