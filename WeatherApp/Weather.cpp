@@ -23,16 +23,35 @@ void WeatherInfo::operator=(const WeatherInfo& other) {
 	this->pressure = other.pressure;
 }
 
-#ifdef DEBUG
-void WeatherInfo::PrintWeather() {
-	std::cout << "condition: " << this->condition << std::endl;
-	std::cout << "temp: " << this->temp << std::endl;
-	std::cout << "feels like: " << this->feels_like << std::endl;
-	std::cout << "humidity: " << this->humidity << std::endl;
-	std::cout << "uv: " << this->uv << std::endl;
-	std::cout << "wind speed: " << this->wind_speed << std::endl;
-	std::cout << "pressure: " << this->pressure << std::endl;
+
+int WeatherInfo::GetConditionCode() const {
+	return condition_code;
 }
-#endif // DEBUG
 
+std::string WeatherInfo::GetCondition() const {
+	return condition;
+}
 
+int WeatherInfo::GetTemp() const {
+	return temp;
+}
+
+int WeatherInfo::GetFeelsLike() const {
+	return feels_like;
+}
+
+int WeatherInfo::GetHumidity() const {
+	return humidity;
+}
+
+int WeatherInfo::GetUv() const {
+	return uv;
+}
+
+int WeatherInfo::GetWindSpeed() const {
+	return wind_speed;
+}
+
+int WeatherInfo::GetPressure() const {
+	return pressure;
+}

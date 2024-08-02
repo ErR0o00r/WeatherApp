@@ -4,8 +4,6 @@
 #include <string>
 #include "UI.h"
 
-#define DEBUG
-
 class WeatherInfo {
 private:
 	int condition_code = NULL;
@@ -25,14 +23,27 @@ private:
 	int pressure = NULL;
 
 public:
+
+	int GetConditionCode() const;
+
+	std::string GetCondition() const;
+
+	int GetTemp() const;
+
+	int GetFeelsLike() const;
+	
+	int GetHumidity() const;
+
+	int GetUv() const;
+
+	int GetWindSpeed() const;
+
+	int GetPressure() const;
+
 	WeatherInfo() = default;
 
 	WeatherInfo(int condition_code, std::string condition, int temp, int feels_like, int humidity, int uv, int wind_speed, int pressure);
 
 	void operator=(const WeatherInfo& other);
-
-#ifdef DEBUG
-	void PrintWeather();
-#endif // DEBUG
 
 };
