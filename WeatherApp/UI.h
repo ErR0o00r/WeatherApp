@@ -2,6 +2,11 @@
 #include <Windows.h>
 #include <iostream>
 #include <string>
+#include <ctime>
+#include "Weather.h"
+
+struct Weather;
+class WeatherInfo;
 
 struct AsciiArt {
 	std::string sunny[3] = { "  \\ | /   ",
@@ -51,4 +56,9 @@ struct AsciiArt {
 
 void PrintColorText(WORD color, std::string text);
 
+void SetConsoleTextColor(WORD color);
+
 std::string* ParseConditionCode(int code);
+
+void PrintWeatherInfo(Weather weather);
+

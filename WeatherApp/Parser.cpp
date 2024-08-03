@@ -3,7 +3,7 @@
 WeatherInfo ParseResponse(std::string raw_response) {
 	
 	if (raw_response == "") {
-		PrintColorText(FOREGROUND_RED, "Invalid Link");
+		PrintColorText(FOREGROUND_RED, "Invalid Link\n");
 		exit(1);
 	}
 

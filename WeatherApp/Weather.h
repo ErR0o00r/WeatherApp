@@ -4,10 +4,7 @@
 #include <string>
 #include "UI.h"
 
-#define DEBUG
-
-class WeatherInfo {
-private:
+struct Weather {
 	int condition_code = NULL;
 
 	std::string condition = "";
@@ -23,16 +20,19 @@ private:
 	int wind_speed = NULL;
 
 	int pressure = NULL;
+};
 
+class WeatherInfo {
+private:
+	Weather weather_info;
 public:
-	WeatherInfo() = default;
 
+	WeatherInfo() = default;
+	
 	WeatherInfo(int condition_code, std::string condition, int temp, int feels_like, int humidity, int uv, int wind_speed, int pressure);
+	
+	Weather GetWeatherInfo();
 
 	void operator=(const WeatherInfo& other);
-
-#ifdef DEBUG
-	void PrintWeather();
-#endif // DEBUG
 
 };
