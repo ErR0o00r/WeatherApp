@@ -5,7 +5,8 @@
 #include "Weather.h"
 #include "Parser.h"
 
-//яемевйю, ъ реаъ нвемэ яхкэмн кчакч <3 <3 <3
+// яемевйю, ъ реаъ нвемэ яхкэмн кчакч <3 <3 <3
+// ESENIIA, I LOVE YOU SO MUCH <3 <3 <3
 
 void ServerPoll(WeatherInfo& weather) {
 	WeatherInfo tmp;
