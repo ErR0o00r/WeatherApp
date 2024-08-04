@@ -2,6 +2,8 @@
 #include <curl/curl.h>
 #include <string>
 #include <iostream>
+#include "UI.h"
+#include "Logging.h"
 
 
 class Request {

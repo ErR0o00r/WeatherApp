@@ -20,3 +20,12 @@ void WeatherInfo::operator=(const WeatherInfo& other) {
 	this->weather_info = other.weather_info;
 }
 
+bool WeatherInfo::IsEmpty() {
+	if (weather_info.condition_code == NULL && weather_info.condition == "" &&
+		weather_info.feels_like == NULL && weather_info.humidity == NULL &&
+		weather_info.uv == NULL && weather_info.wind_speed == NULL && weather_info.pressure == NULL) {
+		return true;
+	}
+	return false;
+}
+

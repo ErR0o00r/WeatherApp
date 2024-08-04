@@ -35,4 +35,6 @@ public:
 
 	void operator=(const WeatherInfo& other);
 
+	bool IsEmpty();
+
 };

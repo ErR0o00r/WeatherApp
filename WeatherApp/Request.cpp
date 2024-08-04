@@ -23,7 +23,9 @@ Request::~Request() {
 void Request::SendRequest() {
 	curl_code = curl_easy_perform(handle);
 	if (curl_code != CURLE_OK) {
-		std::cout << "error\n";
+		PrintColorText(FOREGROUND_RED, "error\n");
+		Log log;
+		log.logging("error\n");
 	}
 }
 

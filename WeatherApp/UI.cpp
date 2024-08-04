@@ -69,15 +69,9 @@ void PrintWeatherInfo(Weather weather) {
 	std::string* art = ParseConditionCode(weather.condition_code);
 	SetConsoleTextColor(weather_color);
 
-	std::cout << art[0] << "\t" << current_time.tm_hour << ":" << current_time.tm_min << "\t" << weather.condition << std::endl;
-	std::cout << art[1] << "\t" << weather.temp << "°C" << "\t" << "feels like " << weather.feels_like << "°C" << std::endl;
-	std::cout << art[2] << "\t" << weather.uv << " uv" << "\t" << "wind speed " << weather.wind_speed << "kph" << std::endl;
-	//std::cout << art[0] << "\t" << weather.temp;
-	//std::wcout << L"º" << "\t";
-	//std::cout << "feels like " << weather.feels_like;
-	//std::wcout << L"º" << std::endl;
-	//std::cout << art[1] << "\t" << weather.condition << "\t" << "wind speed " << weather.wind_speed << "kph" << std::endl;
-	//std::cout << art[2] << "\t" << current_time.tm_hour << ":" << current_time.tm_min << "\t" << "humidity " << weather.humidity << std::endl;
+	std::cout << art[0] << "  " << current_time.tm_hour << ":" << current_time.tm_min << "\t" << weather.condition << std::endl;
+	std::cout << art[1] << "  " << weather.temp << " C" << "\t" << "feels like " << weather.feels_like << " C" << std::endl;
+	std::cout << art[2] << "  " << weather.uv << " uv" << "\t" << "wind speed " << weather.wind_speed << "kph" << std::endl;
 
 	SetConsoleTextColor(FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
 }
