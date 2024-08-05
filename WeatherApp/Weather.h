@@ -5,9 +5,9 @@
 #include "UI.h"
 
 struct Weather {
-	int condition_code = NULL;
-
 	std::string condition = "";
+
+	std::string local_time = "";
 
 	int temp = NULL;
 
@@ -20,6 +20,8 @@ struct Weather {
 	int wind_speed = NULL;
 
 	int pressure = NULL;
+	
+	int condition_code = NULL;
 };
 
 class WeatherInfo {
@@ -29,7 +31,7 @@ public:
 
 	WeatherInfo() = default;
 	
-	WeatherInfo(int condition_code, std::string condition, int temp, int feels_like, int humidity, int uv, int wind_speed, int pressure);
+	WeatherInfo(std::string local_time, int condition_code, std::string condition, int temp, int feels_like, int humidity, int uv, int wind_speed, int pressure);
 	
 	Weather GetWeatherInfo();
 

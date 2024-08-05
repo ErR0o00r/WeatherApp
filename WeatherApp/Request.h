@@ -15,7 +15,7 @@ private:
 public:
 	static size_t WriteFunction(char* content, size_t size, size_t nmemb, void* userp);
 
-	Request();
+	Request(std::string location);
 
 	~Request();
 

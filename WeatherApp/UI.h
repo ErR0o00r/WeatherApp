@@ -2,7 +2,6 @@
 #include <Windows.h>
 #include <iostream>
 #include <string>
-#include <ctime>
 #include "Weather.h"
 
 struct Weather;
@@ -58,7 +57,6 @@ void PrintColorText(WORD color, std::string text);
 
 void SetConsoleTextColor(WORD color);
 
-std::string* ParseConditionCode(int code);
 
-void PrintWeatherInfo(Weather weather);
+void PrintWeatherInfo(Weather weather, bool little_information_flag);
 

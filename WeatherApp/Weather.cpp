@@ -5,7 +5,8 @@ Weather WeatherInfo::GetWeatherInfo() {
 	return weather_info;
 }
 
-WeatherInfo::WeatherInfo(int condition_code, std::string condition, int temp, int feels_like, int humidity, int uv, int wind_speed, int pressure) {
+WeatherInfo::WeatherInfo(std::string local_time, int condition_code, std::string condition, int temp, int feels_like, int humidity, int uv, int wind_speed, int pressure) {
+	weather_info.local_time = local_time;
 	weather_info.condition_code = condition_code;
 	weather_info.condition = condition;
 	weather_info.temp = temp;
